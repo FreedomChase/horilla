@@ -1,0 +1,42 @@
+{
+  "name": "Web-Design Agent",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:20",
+
+  "postCreateCommand": "cd custom && npm install",
+
+  "forwardPorts": [3000],
+  "portsAttributes": {
+    "3000": {
+      "label": "Web-Design Agent",
+      "onAutoForward": "openBrowser"
+    }
+  },
+
+  "secrets": {
+    "ANTHROPIC_API_KEY": {
+      "description": "Anthropic API key for the Web-Design Agent",
+      "documentationUrl": "https://console.anthropic.com/settings/keys"
+    }
+  },
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "bradlc.vscode-tailwindcss",
+        "esbenp.prettier-vscode",
+        "dbaeumer.vscode-eslint"
+      ],
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "bash",
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+      }
+    }
+  },
+
+  "remoteEnv": {
+    "ANTHROPIC_API_KEY": "${localEnv:ANTHROPIC_API_KEY}"
+  },
+
+  "postStartCommand": "cd custom && echo 'ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}' > .env && npm run dev"
+}
