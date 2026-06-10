@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<!--
+  CMS FIELD MANIFEST
+  ──────────────────────────────────────────────────────────────
+  meta.title                string    Browser tab title
+  meta.description          string    Meta description for SEO
+  nav.logo_text             string    Brand wordmark
+  nav.link_label            string    Top-right link label
+  nav.link_url              link      Top-right link destination
+  eyebrow.text              string    Small label above headline
+  grid.items[0].label       string    Icon label — Employee
+  grid.items[0].url         link      Icon link — Employee module
+  grid.items[1].label       string    Icon label — Attendance
+  grid.items[1].url         link      Icon link — Attendance module
+  grid.items[2].label       string    Icon label — Leave
+  grid.items[2].url         link      Icon link — Leave module
+  grid.items[3].label       string    Icon label — Payroll
+  grid.items[3].url         link      Icon link — Payroll module
+  grid.items[4].label       string    Icon label — Recruitment
+  grid.items[4].url         link      Icon link — Recruitment module
+  grid.items[5].label       string    Icon label — Onboarding
+  grid.items[5].url         link      Icon link — Onboarding module
+  grid.items[6].label       string    Icon label — Offboarding
+  grid.items[6].url         link      Icon link — Offboarding module
+  grid.items[7].label       string    Icon label — Helpdesk
+  grid.items[7].url         link      Icon link — Helpdesk module
+  grid.items[8].label       string    Icon label — Performance
+  grid.items[8].url         link      Icon link — Performance module
+  hero.headline_1           string    Headline line 1
+  hero.headline_2           string    Headline line 2
+  hero.descriptor           string    One-to-two sentence value prop
+  cta.label                 string    Primary CTA text
+  cta.url                   link      Primary CTA destination
+  footer.version            string    Version tag
+  footer.license            string    License text
+  footer.github_label       string    GitHub link label
+  footer.github_url         link      GitHub repository URL
+  ──────────────────────────────────────────────────────────────
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-cms="meta.title">Horilla — Open-source HRMS</title>
+  <meta name="description" data-cms="meta.description" content="HR infrastructure for modern teams. Open-source, self-hosted, nine modules." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] }
+        }
+      }
+    }
+  </script>
+  <style>
+    * { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(8px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .anim       { animation: fadeUp 300ms cubic-bezier(0.4, 0, 0.2, 1) both; }
+    .anim-d1    { animation-delay: 40ms; }
+    .anim-d2    { animation-delay: 100ms; }
+    .anim-d3    { animation-delay: 160ms; }
+    .anim-d4    { animation-delay: 220ms; }
+    .anim-d5    { animation-delay: 280ms; }
+  </style>
+</head>
+<body class="bg-white text-zinc-900 font-sans min-h-screen flex flex-col selection:bg-zinc-100">
+
+  <!-- ── Header ─────────────────────────────────────────── -->
+  <header class="flex items-center justify-between px-6 md:px-10 h-16 anim">
+    <span
+      class="text-sm font-medium tracking-tight"
+      data-cms="nav.logo_text"
+    >horilla</span>
+
+    <a
+      href="/docs"
+      data-cms="nav.link_url"
+      class="text-xs text-zinc-400 hover:text-zinc-900 transition-colors duration-75 ease-out"
+    ><span data-cms="nav.link_label">docs →</span></a>
+  </header>
+
+  <!-- ── Main ──────────────────────────────────────────── -->
+  <main class="flex-1 flex flex-col items-center justify-center px-6 pb-16 pt-4 text-center">
+
+    <!-- Eyebrow -->
+    <p
+      class="text-[10px] tracking-[0.2em] uppercase text-zinc-400 mb-10 anim anim-d1"
+      data-cms="eyebrow.text"
+    >Open-source HRMS</p>
+
+    <!-- Module icon grid -->
+    <div
+      class="grid grid-cols-3 gap-x-8 gap-y-6 mb-14 anim anim-d2"
+      role="list"
+      aria-label="Horilla modules"
+    >
+
+      <!-- Employee -->
+      <a
+        href="/employee"
+        data-cms="grid.items[0].url"
+        role="listitem"
+        class="flex flex-col items-center gap-[10px] group outline-none"
+      >
+        <span class="flex items-center justify-center w-10 h-10 opacity-60 group-hover:opacity-30 transition-all duration-[120ms] ease-out group-hover:scale-[0.97]">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="7" r="4"/>
+            <path d="M4 21v-1a8 8 0 0 1 16 0v1"/>
+          </svg>
+        </span>
+        <span class="text-[9px] tracking-[0.15em] uppercase text-zinc-400" data-cms="grid.items[0].label">Employee</span>
+      </a>
+
+      <!-- Attendance -->
+      <a
+        href="/attendance"
+        data-cms="grid.items[1].url"
+        role="listitem"
+        class="flex flex-col items-center gap-[10px] group outline-none"
+      >
+        <span class="flex items-center justify-center w-10 h-10 opacity-60 group-hover:opacity-30 transition-all duration-[120ms] ease-out group-hover:scale-[0.97]">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="9"/>
+            <polyline points="12 7 12 12 15.5 14"/>
+          </svg>
+        </span>
+        <span class="text-[9px] tracking-[0.15em] uppercase text-zinc-400" data-cms="grid.items[1].label">Attendance</span>
+      </a>
+
+      <!-- Leave -->
+      <a
+        href="/leave"
+        data-cms="grid.items[2].url"
+        role="listitem"
+        class="flex flex-col items-center gap-[10px] group outline-none"
+      >
+        <span class="flex items-center justify-center w-10 h-10 opacity-60 group-hover:opacity-30 transition-all duration-[120ms] ease-out group-hover:scale-[0.97]">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="4" width="18" height="18" rx="2"/>
+            <line x1="16" y1="2" x2="16" y2="6"/>
+            <line x1="8" y1="2" x2="8" y2="6"/>
+            <line x1="3" y1="10" x2="21" y2="10"/>
+          </svg>
+        </span>
+        <span class="text-[9px] tracking-[0.15em] uppercase text-zinc-400" data-cms="grid.items[2].label">Leave</span>
+      </a>
+
+      <!-- Payroll -->
+      <a
+        href="/payroll"
+        data-cms="grid.items[3].url"
+        role="listitem"
+        class="flex flex-col items-center gap-[10px] group outline-none"
+      >
+        <span class="flex items-center justify-center w-10 h-10 opacity-60 group-hover:opacity-30 transition-all duration-[120ms] ease-out group-hover:scale-[0.97]">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="5" width="20" height="14" rx="2"/>
+            <line x1="2" y1="10" x2="22" y2="10"/>
+            <line x1="6" y1="15" x2="9" y2="15"/>
+          </svg>
+        </span>
+        <span class="text-[9px] tracking-[0.15em] uppercase text-zinc-400" data-cms="grid.items[3].label">Payroll</span>
+      </a>
+
+      <!-- Recruitment -->
+      <a
+        href="/recruitment"
+        data-cms="grid.items[4].url"
+        role="listitem"
+        class="flex flex-col items-center gap-[10px] group outline-none"
+      >
+        <span class="flex items-center justify-center w-10 h-10 opacity-60 group-hover:opacity-30 transition-all duration-[120ms] ease-out group-hover:scale-[0.97]">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="7" width="20" height="14" rx="2"/>
+            <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/>
+            <line x1="12" y1="12" x2="12" y2="16"/>
+            <line x1="10" y1="14" x2="14" y2="14"/>
+          </svg>
+        </span>
+        <span class="text-[9px] tracking-[0.15em] uppercase text-zinc-400" data-cms="grid.items[4].label">Recruitment</span>
+      </a>
+
+      <!-- Onboarding -->
+      <a
+        href="/onboarding"
+        data-cms="grid.items[5].url"
+        role="listitem"
+        class="flex flex-col items-center gap-[10px] group outline-none"
+      >
+        <span class="flex items-center justify-center w-10 h-10 opacity-60 group-hover:opacity-30 transition-all duration-[120ms] ease-out group-hover:scale-[0.97]">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M15 3h6v6"/>
+            <path d="M10 14 21 3"/>
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+          </svg>
+        </span>
+        <span class="text-[9px] tracking-[0.15em] uppercase text-zinc-400" data-cms="grid.items[5].label">Onboarding</span>
+      </a>
+
+      <!-- Offboarding -->
+      <a
+        href="/offboarding"
+        data-cms="grid.items[6].url"
+        role="listitem"
+        class="flex flex-col items-center gap-[10px] group outline-none"
+      >
+        <span class="flex items-center justify-center w-10 h-10 opacity-60 group-hover:opacity-30 transition-all duration-[120ms] ease-out group-hover:scale-[0.97]">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
+            <polyline points="16 17 21 12 16 7"/>
+            <line x1="21" y1="12" x2="9" y2="12"/>
+          </svg>
+        </span>
+        <span class="text-[9px] tracking-[0.15em] uppercase text-zinc-400" data-cms="grid.items[6].label">Offboarding</span>
+      </a>
+
+      <!-- Helpdesk -->
+      <a
+        href="/helpdesk"
+        data-cms="grid.items[7].url"
+        role="listitem"
+        class="flex flex-col items-center gap-[10px] group outline-none"
+      >
+        <span class="flex items-center justify-center w-10 h-10 opacity-60 group-hover:opacity-30 transition-all duration-[120ms] ease-out group-hover:scale-[0.97]">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+          </svg>
+        </span>
+        <span class="text-[9px] tracking-[0.15em] uppercase text-zinc-400" data-cms="grid.items[7].label">Helpdesk</span>
+      </a>
+
+      <!-- Performance -->
+      <a
+        href="/pms"
+        data-cms="grid.items[8].url"
+        role="listitem"
+        class="flex flex-col items-center gap-[10px] group outline-none"
+      >
+        <span class="flex items-center justify-center w-10 h-10 opacity-60 group-hover:opacity-30 transition-all duration-[120ms] ease-out group-hover:scale-[0.97]">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="20" x2="18" y2="10"/>
+            <line x1="12" y1="20" x2="12" y2="4"/>
+            <line x1="6" y1="20" x2="6" y2="14"/>
+          </svg>
+        </span>
+        <span class="text-[9px] tracking-[0.15em] uppercase text-zinc-400" data-cms="grid.items[8].label">Performance</span>
+      </a>
+
+    </div>
+
+    <!-- Headline -->
+    <h1
+      class="text-[30px] md:text-[46px] font-medium tracking-[-0.02em] leading-[1.08] text-zinc-900 mb-4 anim anim-d3"
+    >
+      <span data-cms="hero.headline_1">HR infrastructure</span><br />
+      <span data-cms="hero.headline_2">for modern teams.</span>
+    </h1>
+
+    <!-- Descriptor -->
+    <p
+      class="text-[15px] text-zinc-500 leading-relaxed max-w-[320px] mb-8 anim anim-d4"
+      data-cms="hero.descriptor"
+    >Open-source, self-hosted, and ships with nine HR modules. No vendor lock-in. No setup friction.</p>
+
+    <!-- CTA -->
+    <a
+      href="/start"
+      data-cms="cta.url"
+      class="text-sm font-medium text-zinc-900 hover:text-zinc-400 transition-colors duration-75 ease-out anim anim-d5"
+    ><span data-cms="cta.label">Get started →</span></a>
+
+  </main>
+
+  <!-- ── Footer ────────────────────────────────────────── -->
+  <footer class="border-t border-zinc-100 px-6 md:px-10 h-12 flex items-center justify-between">
+    <span class="text-[11px] text-zinc-400 flex items-center gap-2">
+      <span data-cms="footer.version">v1.0</span>
+      <span class="text-zinc-200" aria-hidden="true">—</span>
+      <span data-cms="footer.license">MIT license</span>
+    </span>
+    <a
+      href="https://github.com/horilla-opensource/horilla"
+      data-cms="footer.github_url"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="text-[11px] text-zinc-400 hover:text-zinc-900 transition-colors duration-75 ease-out"
+    ><span data-cms="footer.github_label">GitHub ↗</span></a>
+  </footer>
+
+</body>
+</html>
